@@ -26,20 +26,22 @@ class ImagesOptimPlugin extends Plugin
 
     protected function initEvents()
     {
-        Event::on(
-            AssetTransforms::class,
-            AssetTransforms::EVENT_GENERATE_TRANSFORM,
-            function (GenerateTransformEvent $event) {
-                $tempFilename = uniqid(pathinfo($event->transformIndex->filename, PATHINFO_FILENAME), true) .
-                    '.' . $event->transformIndex->detectedFormat;
-                $tempPath = \Craft::$app->getPath()->getTempPath() . DIRECTORY_SEPARATOR . $tempFilename;
-                $event->image->saveAs($tempPath);
+        if (function_exists("proc_open")) {
+            Event::on(
+                AssetTransforms::class,
+                AssetTransforms::EVENT_GENERATE_TRANSFORM,
+                function (GenerateTransformEvent $event) {
+                    $tempFilename = uniqid(pathinfo($event->transformIndex->filename, PATHINFO_FILENAME), true) .
+                        '.' . $event->transformIndex->detectedFormat;
+                    $tempPath = \Craft::$app->getPath()->getTempPath() . DIRECTORY_SEPARATOR . $tempFilename;
+                    $event->image->saveAs($tempPath);
 
-                $optimizerChain = OptimizerChainFactory::create();
-                $optimizerChain->optimize($tempPath);
+                    $optimizerChain = OptimizerChainFactory::create();
+                    $optimizerChain->optimize($tempPath);
 
-                $event->tempPath = $tempPath;
-            }
-        );
+                    $event->tempPath = $tempPath;
+                }
+            );
+        }
     }
 }

@@ -1,7 +1,7 @@
 {
     "name": "mutation/imagesoptim",
     "description": "Optimize images",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "craft-plugin",
     "support": {
         "docs": "https://github.com/MutationDigitale/craft3-imagesoptim/blob/master/README.md",
