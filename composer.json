@@ -1,7 +1,6 @@
 {
     "name": "mutation/imagesoptim",
     "description": "Optimize images",
-    "version": "1.0.1",
     "type": "craft-plugin",
     "support": {
         "docs": "https://github.com/MutationDigitale/craft3-imagesoptim/blob/master/README.md",
@@ -17,7 +16,7 @@
     "require": {
         "php": ">7.1",
         "craftcms/cms": "^3.0.0",
-        "spatie/image-optimizer": "^1.1"
+        "spatie/image-optimizer": "^1.2"
     },
     "autoload": {
         "psr-4": {
