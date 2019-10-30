@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3 - 2019-10-30
+
+### Changed
+- Removed PHP 7.1 requirement
+
 ## 1.0.2 - 2019-09-26
 
 ### Changed
