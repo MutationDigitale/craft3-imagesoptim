@@ -1,4 +1,4 @@
-# Images optimization plugin
+# Images optimization plugin for Craft CMS
 
 Compress images with image-optimizer (https://github.com/spatie/image-optimizer). Those following dependencies must be installed on the server:
                 
